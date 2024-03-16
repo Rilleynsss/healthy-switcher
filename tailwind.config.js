@@ -10,6 +10,9 @@ module.exports = {
       padding: "165px",
     },
     extend: {
+      backgroundImage: {
+        mainBg: `url('../img/main_bg.png')`,
+      },
       colors: {
         "custom-color": " rgba(26, 26, 26, 1)",
       },
