@@ -2,7 +2,10 @@ import { ReactComponent as Logo } from "../../img/Logo.svg";
 
 const Header = () => {
   return (
-    <header className=" border-b-[3px] border-gray-500/65 w-full absolute">
+    <header
+      className=" border-b-[3px] border-gray-500/65 w-full fixed z-10 "
+      style={{ backdropFilter: "blur(5px)" }}
+    >
       <div className="flex h-24 items-center justify-between container">
         <div className="flex items-center ">
           <Logo className=" mr-6" />

@@ -6,3 +6,11 @@
   font-family: 'Helvetica Bold';
   src: url('../fonts/HelveticaNeueCyr-Bold.woff2');
 }
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('../fonts/HelveticaNeueCyr-Light.woff2');
+}
+@font-face {
+  font-family: 'Helvetica Normal';
+  src: url('../fonts/HelveticaNeueCyr-Roman.woff2');
+}

@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     fontFamily: {
       "helvetica-bold": ["Helvetica Bold"],
+      "helvetica-light": ["Helvetica Light"],
+      "helvetica-normal": ["Helvetica Normal"],
     },
     container: {
       center: true,
@@ -15,6 +17,8 @@ module.exports = {
       },
       colors: {
         "custom-color": " rgba(26, 26, 26, 1)",
+        "custom-color-lighter": "rgba(37, 37, 37, 1)",
+        "custom-green": " rgba(52, 199, 89, 1)",
       },
     },
   },
