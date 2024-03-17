@@ -1,6 +1,7 @@
 import About from "./components/About/About";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
+import Work from "./components/Work/Work";
 import img_bg from "./img/main_bg.png";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Header />
       <Main />
       <About />
+      <Work />
     </div>
   );
 };
