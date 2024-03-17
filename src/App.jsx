@@ -1,4 +1,5 @@
 import About from "./components/About/About";
+import Dishes from "./components/Dishes/Dishes";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Work from "./components/Work/Work";
@@ -12,6 +13,7 @@ const App = () => {
       <Main />
       <About />
       <Work />
+      <Dishes />
     </div>
   );
 };
