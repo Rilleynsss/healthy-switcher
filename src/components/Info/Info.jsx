@@ -24,7 +24,10 @@ const Info = () => {
     <ul className="flex w-full mt-[70px] justify-between">
       {list.map((item) => {
         return (
-          <li className=" flex flex-col items-center justify-center">
+          <li
+            key={item.h2}
+            className=" flex flex-col items-center justify-center"
+          >
             {item.svg}
             <h2 className="mt-[16px]">{item.h2}</h2>
             <p className="opacity-50 leading-8">{item.p}</p>

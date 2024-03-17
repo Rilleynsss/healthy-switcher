@@ -14,3 +14,11 @@
   font-family: 'Helvetica Normal';
   src: url('../fonts/HelveticaNeueCyr-Roman.woff2');
 }
+.customHover rect{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all .3s;
+}
+.customHover:hover rect{
+
+  fill:rgba(52, 199, 89, 1);
+}
