@@ -18,7 +18,24 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition: all .3s;
 }
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-track{
+  background: rgba(33, 83, 45);
+}
+::-webkit-scrollbar-thumb{
+  background:rgba(52, 199, 89, 1);
+  border-radius: 5px;
+}
 .customHover:hover rect{
 
   fill:rgba(52, 199, 89, 1);
+}
+.large{
+  width: 160px;
+  height: 65px;
+}
+.small{
+  width: 65px;height: 65px;
 }

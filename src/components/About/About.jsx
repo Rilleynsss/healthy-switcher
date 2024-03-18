@@ -6,8 +6,8 @@ import { useState } from "react";
 import { ReactComponent as Right } from "../../img/btns/right.svg";
 import { ReactComponent as Left } from "../../img/btns/left.svg";
 import "../../style/index.css";
-const About = () => {
-  const [slides, setSlide] = useState([slide1, slide2, slide1, slide2]);
+const About = ({ pos }) => {
+  const [slides] = useState([slide1, slide2, slide1, slide2]);
   const [idxSlide, setIdxSlide] = useState(0);
   const changeSlide = (type) => {
     switch (type) {
@@ -15,7 +15,7 @@ const About = () => {
         if (idxSlide > 0) {
           setIdxSlide((prev) => prev - 1);
         }
-        if (idxSlide == 0) {
+        if (idxSlide === 0) {
           setIdxSlide(slides.length - 2);
         }
         break;
@@ -23,16 +23,17 @@ const About = () => {
         if (slides.length > idxSlide + 2) {
           setIdxSlide((prev) => prev + 1);
         }
-        if (idxSlide + 2 == slides.length) {
+        if (idxSlide + 2 === slides.length) {
           setIdxSlide(0);
         }
         break;
       default:
-        console.log("def");
+        break;
     }
   };
+
   return (
-    <div className="container relative z-[1] ">
+    <div id="menu" className="container relative z-[1] ">
       <div className="bg-custom-color-lighter  py-[90px] rounded-[5px] flex items-center flex-col w-full">
         <Title img={<AboutBg />}>The Basics Of Healthy Food</Title>
         <h3 className="w-[734px] mt-[31px] text-gray-400 text-center">
@@ -64,6 +65,7 @@ const About = () => {
                   className="transition-all"
                   key={idx}
                   src={item}
+                  alt=""
                 />
               );
             })}

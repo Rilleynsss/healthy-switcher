@@ -48,7 +48,7 @@ const Dishes = () => {
     },
   ];
   return (
-    <div>
+    <div id="recipes">
       <Title underline={true} img={<Dish />}>
         Dish Of The Day
       </Title>

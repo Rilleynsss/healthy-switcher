@@ -13,7 +13,7 @@ const Main = () => {
           marinating, so you can cook a fresh homemade dinner in just 15
           minutes.
         </h2>
-        <button className=" mt-[40px] rounded-full text-lg tracking-widest  bg-custom-green py-[25px] px-[58px] font-helvetica-bold text-custom-color">
+        <button className=" mt-[40px] mb-[70px] rounded-full text-lg tracking-widest  bg-custom-green py-[25px] px-[58px] font-helvetica-bold text-custom-color">
           Order Now
         </button>
         <Info />
