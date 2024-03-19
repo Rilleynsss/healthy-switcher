@@ -53,15 +53,18 @@ const Dishes = () => {
         Dish Of The Day
       </Title>
       <div className="mt-[90px] container flex gap-[30px] flex-wrap w-full justify-between">
-        {cards.map((item) => {
+        {cards.map((item, idx) => {
           return (
-            <div className="w-[350px] h-[493px] bg-custom-color-lighter">
+            <div
+              key={idx}
+              className="w-[350px] h-[493px] bg-custom-color-lighter"
+            >
               <img src={item.img} alt="" />
               <div className="p-6 font-helvetica-normal ">
                 <h3 className="text-white text-3xl mb-[2px] ">{item.h3}</h3>
                 <h4 className="text-gray-400 text-xs mb-[20px]">{item.h4}</h4>
                 <p className="mb-[10px] text-sm text-gray-400">{item.p}</p>
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                   <Rating />
                   <button className="border-solid border-2 rounded-full px-8 py-1 font-helvetica-bold text-sm text-white opacity-70 hover:bg-custom-green hover:opacity-100 hover:border-custom-green hover:text-custom-color transition-all duration-300">
                     ORDER

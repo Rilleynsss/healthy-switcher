@@ -1,44 +1,101 @@
-import "./rating.css";
+import { useState } from "react";
 const Rating = () => {
+  const [rating, setRating] = useState();
+  const [ratingClick, setRatingClick] = useState();
+
   return (
     <div className="full-stars">
-      <div className="rating-group">
-        <input name="fst" value="0" type="radio" disabled checked />
-
-        <label htmlFor="fst-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-          </svg>
-        </label>
-        <input name="fst" id="fst-1" value="1" type="radio" />
-
-        <label htmlFor="fst-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-          </svg>
-        </label>
-        <input name="fst" id="fst-2" value="2" type="radio" />
-
-        <label htmlFor="fst-3">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-          </svg>
-        </label>
-        <input name="fst" id="fst-3" value="3" type="radio" />
-
-        <label htmlFor="fst-4">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-          </svg>
-        </label>
-        <input name="fst" id="fst-4" value="4" type="radio" />
-
-        <label htmlFor="fst-5">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-          </svg>
-        </label>
-        <input name="fst" id="fst-5" value="5" type="radio" />
+      <svg width={0} height={0} xmlns="http://www.w3.org/2000/svg">
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          id="star"
+          className="transition-all duration-300 cursor-pointer"
+        >
+          <path d="M10 15.27L16.18 19L14.54 11.97L20 7.24L12.81 6.63L10 0L7.19 6.63L0 7.24L5.46 11.97L3.82 19L10 15.27Z" />
+        </symbol>
+      </svg>
+      <div className="flex">
+        <svg
+          width="24"
+          height="24"
+          fill={`${
+            rating >= 1 || ratingClick >= 1
+              ? "rgba(249, 173, 61, 1)"
+              : " rgba(249, 174, 61, 0.307)"
+          }`}
+          onMouseEnter={(e) => {
+            setRating(1);
+          }}
+          onMouseLeave={() => setRating(0)}
+          onClick={() => setRatingClick(1)}
+        >
+          <use href="#star" />
+        </svg>
+        <svg
+          width="24"
+          height="24"
+          fill={`${
+            rating > 1 || ratingClick > 1
+              ? "rgba(249, 173, 61, 1)"
+              : " rgba(249, 174, 61, 0.307)"
+          }`}
+          onMouseEnter={(e) => {
+            setRating(2);
+          }}
+          onMouseLeave={() => setRating(0)}
+          onClick={() => setRatingClick(2)}
+        >
+          <use href="#star" />
+        </svg>
+        <svg
+          width="24"
+          height="24"
+          fill={`${
+            rating > 2 || ratingClick > 2
+              ? "rgba(249, 173, 61, 1)"
+              : " rgba(249, 174, 61, 0.307)"
+          }`}
+          onMouseEnter={(e) => {
+            setRating(3);
+          }}
+          onMouseLeave={() => setRating(0)}
+          onClick={() => setRatingClick(3)}
+        >
+          <use href="#star" />
+        </svg>
+        <svg
+          width="24"
+          height="24"
+          fill={`${
+            rating > 3 || ratingClick > 3
+              ? "rgba(249, 173, 61, 1)"
+              : " rgba(249, 174, 61, 0.307)"
+          }`}
+          onMouseEnter={(e) => {
+            setRating(4);
+          }}
+          onMouseLeave={() => setRating(0)}
+          onClick={() => setRatingClick(4)}
+        >
+          <use href="#star" />
+        </svg>
+        <svg
+          width="24"
+          height="24"
+          fill={`${
+            rating === 5 || ratingClick === 5
+              ? "rgba(249, 173, 61, 1)"
+              : " rgba(249, 174, 61, 0.307)"
+          }`}
+          onMouseEnter={(e) => {
+            setRating(5);
+          }}
+          onMouseLeave={() => setRating(0)}
+          onClick={() => setRatingClick(5)}
+        >
+          <use href="#star" />
+        </svg>
       </div>
     </div>
   );

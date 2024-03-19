@@ -50,7 +50,7 @@ const Chefs = () => {
         <ul className="flex justify-between">
           {chefs.map((item) => {
             return (
-              <li>
+              <li key={item.h4}>
                 <section className="flex items-center font-helvetica-normal">
                   <img src={item.avatar} alt="" className="mr-[24px]" />
                   <section>
